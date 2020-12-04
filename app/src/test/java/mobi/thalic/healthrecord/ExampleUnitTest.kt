@@ -1,4 +1,4 @@
-package com.example.healthrecord
+package mobi.thalic.healthrecord
 
 import org.junit.Test
 
