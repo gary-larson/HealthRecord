@@ -1,11 +1,9 @@
 package mobi.thalic.healthrecord.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import java.sql.Date
+import java.time.LocalDateTime
 
 @Dao
 interface HealthDatabaseDao {
@@ -15,6 +13,9 @@ interface HealthDatabaseDao {
     @Update
     fun update(health: HealthEntity)
 
+    @Delete
+    fun delete(health: HealthEntity)
+
     @Query("SELECT * FROM health_record_table WHERE id = :id")
     fun get(id: Long): HealthEntity
 
@@ -22,5 +23,5 @@ interface HealthDatabaseDao {
     fun getAllEntries(): LiveData<List<HealthEntity>>
 
     @Query("SELECT id FROM health_record_table WHERE date_entry = :date")
-    fun getIdByDate(date : Date): Long
+    fun getIdByDate(date : LocalDateTime): Long
 }

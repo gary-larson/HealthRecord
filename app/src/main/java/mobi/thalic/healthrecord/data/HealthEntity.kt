@@ -3,14 +3,14 @@ package mobi.thalic.healthrecord.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.sql.Date
+import java.time.LocalDateTime
 
 @Entity(tableName="health_record_table")
 data class HealthEntity (
     @PrimaryKey(autoGenerate = true)
-    var id : Long,
+    var id : Long = 0L,
     @ColumnInfo(name = "date_entry")
-    var dateEntry : Date,
+    var dateEntry : LocalDateTime,
     @ColumnInfo(name = "blood_sugar")
     var bloodSugar : Int,
     @ColumnInfo(name = "weight")
