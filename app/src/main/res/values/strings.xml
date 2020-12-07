@@ -2,11 +2,16 @@
     <string name="app_name">HealthRecord</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="health_detail_fragment_label">Health Detail Fragment</string>
+    <string name="health_list_fragment_label">Health List Fragment</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="fab_content_text">Add new health record</string>
+    <string name="health_detail_button">Go to list</string>
+    <string name="detail_fragment">Detail fragment</string>
+    <string name="blood_pressure_label">BP</string>
+    <string name="blood_sugar_label">BS</string>
+    <string name="blood_pressure_seperator">/</string>
+    <string name="weight_label">WT</string>
+    <string name="heart_rate_label">HR</string>
+    <string name="date_label">DATE</string>
 </resources>

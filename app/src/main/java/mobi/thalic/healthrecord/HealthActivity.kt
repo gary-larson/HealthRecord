@@ -1,24 +1,30 @@
 package mobi.thalic.healthrecord
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import mobi.thalic.healthrecord.R
-import mobi.thalic.healthrecord.databinding.ActivityMainBinding
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
+import mobi.thalic.healthrecord.data.HealthEntity
+import mobi.thalic.healthrecord.databinding.ActivityHealthBinding
+import mobi.thalic.healthrecord.viewmodel.HealthViewModel
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class HealthActivity : AppCompatActivity(), HealthListFragment.OnListFragmentInteractionListener {
+    private lateinit var binding: ActivityHealthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHealthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        //val model: HealthViewModel by viewModels()
+
 
         binding.fab.setOnClickListener { view ->
+            findNavController(R.id.nav_host_fragment)
+                .navigate(R.id.action_HealthListFragment_to_HealthDetailFragment)
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
@@ -38,5 +44,12 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onListFragmentInteraction(healthRecord: HealthEntity) {
+        val action = HealthListFragmentDirections
+            .actionHealthListFragmentToHealthDetailFragment(healthRecord)
+        findNavController(R.id.nav_host_fragment)
+            .navigate(action)
     }
 }

@@ -3,26 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/HealthListFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="mobi.thalic.healthrecord.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/HealthListFragment"
+        android:name="mobi.thalic.healthrecord.HealthListFragment"
+        android:label="@string/health_list_fragment_label"
+        tools:layout="@layout/health_list_fragment_item_list">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_HealthListFragment_to_HealthDetailFragment"
+            app:destination="@id/HealthDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="mobi.thalic.healthrecord.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/HealthDetailFragment"
+        android:name="mobi.thalic.healthrecord.HealthDetailFragment"
+        android:label="@string/health_detail_fragment_label"
+        tools:layout="@layout/health_detail_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_HealthDetailFragment_to_HealthListFragment"
+            app:destination="@id/HealthListFragment" />
+        <argument
+            android:name="healthRecord"
+            app:argType="mobi.thalic.healthrecord.data.HealthEntity"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

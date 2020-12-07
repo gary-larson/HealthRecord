@@ -1,4 +1,14 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="list_margin">8dp</dimen>
+    <dimen name="list_end_margin">16dp</dimen>
+    <dimen name="list_label_margin">4dp</dimen>
+    <dimen name="list_blood_sugar_label_padding">46dp</dimen>
+    <dimen name="list_padding">8dp</dimen>
+    <dimen name="list_heart_rate_label_padding">6dp</dimen>
+    <dimen name="list_weight_label_padding">4dp</dimen>
 </resources>

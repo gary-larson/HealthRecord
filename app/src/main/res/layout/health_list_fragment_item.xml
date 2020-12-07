@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/diastolic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="120" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:text="@string/blood_pressure_seperator" />
+
+    <TextView
+        android:id="@+id/systolic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="100"/>
+
+    <TextView
+        android:id="@+id/blood_sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="120" />
+
+    <TextView
+        android:id="@+id/heart_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="100"/>
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="185" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/list_margin"
+        android:layout_marginStart="@dimen/list_end_margin"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="2020-12-12 12:00"/>
+</LinearLayout>

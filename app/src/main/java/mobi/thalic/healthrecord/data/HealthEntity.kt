@@ -1,10 +1,13 @@
 package mobi.thalic.healthrecord.data
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 import java.time.LocalDateTime
 
+@Parcelize
 @Entity(tableName="health_record_table")
 data class HealthEntity (
     @PrimaryKey(autoGenerate = true)
@@ -21,5 +24,5 @@ data class HealthEntity (
     var systolic : Int,
     @ColumnInfo(name = "heart_rate")
     var heartRate : Int
-) {
+) : Parcelable {
 }
