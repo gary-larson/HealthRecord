@@ -9,7 +9,7 @@ import androidx.room.TypeConverters
 @Database(entities = [HealthEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class HealthDatabase : RoomDatabase() {
-    abstract val healthDatabaseDao : HealthDatabaseDao
+    abstract fun healthDatabaseDao() : HealthDatabaseDao
 
     companion object{
         @Volatile

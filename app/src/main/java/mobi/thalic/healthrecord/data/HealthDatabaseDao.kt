@@ -8,20 +8,20 @@ import java.time.LocalDateTime
 @Dao
 interface HealthDatabaseDao {
     @Insert
-    fun insert(health: HealthEntity)
+    suspend fun insert(health: HealthEntity)
 
     @Update
-    fun update(health: HealthEntity)
+    suspend fun update(health: HealthEntity)
 
     @Delete
-    fun delete(health: HealthEntity)
+    suspend fun delete(health: HealthEntity)
 
     @Query("SELECT * FROM health_record_table WHERE id = :id")
-    fun get(id: Long): HealthEntity
+    suspend fun get(id: Long): HealthEntity
 
-    @Query("SELECT * FROM health_record_table ORDER BY date_entry DESC")
-    fun getAllEntries(): LiveData<List<HealthEntity>>
+    @get:Query("SELECT * FROM health_record_table ORDER BY date_entry DESC")
+    val allEntries: LiveData<List<HealthEntity>>
 
     @Query("SELECT id FROM health_record_table WHERE date_entry = :date")
-    fun getIdByDate(date : LocalDateTime): Long
+    suspend fun getIdByDate(date : LocalDateTime): Long
 }

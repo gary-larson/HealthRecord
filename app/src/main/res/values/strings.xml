@@ -14,4 +14,11 @@
     <string name="weight_label">WT</string>
     <string name="heart_rate_label">HR</string>
     <string name="date_label">DATE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_blood_pressure_label">Blood Pressure:</string>
+    <string name="diastolic_hint">Diastolic</string>
+    <string name="add_blood_sugar_label">Blood Sugar:</string>
+    <string name="add_weight_label">Weight:</string>
+    <string name="add_heart_rate_label">Heart Rate:</string>
 </resources>
