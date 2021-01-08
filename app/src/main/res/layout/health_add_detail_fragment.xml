@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HealthAddDetailFragment">
+
+    <TextView
+        android:id="@+id/addDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        tools:text="Date: 11Dec2020 12:30 "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/addBloodPressureLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/addSystolicEditText"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/add_blood_pressure_label"
+        app:layout_constraintTop_toBottomOf="@id/addDateTextView"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/addSystolicEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:focusable="true"
+        android:nextFocusForward="@id/addDiastolicEditText"
+        tools:text="120"
+        app:layout_constraintBaseline_toBaselineOf="@id/addBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addBloodPressureLabelTextView" />
+
+    <TextView
+        android:id="@+id/addBloodPressureSeperatorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/addDiastolicEditText"
+        android:text="@string/blood_pressure_seperator"
+        app:layout_constraintBaseline_toBaselineOf="@id/addBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addSystolicEditText"/>
+
+    <EditText
+        android:id="@+id/addDiastolicEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:focusable="true"
+        android:nextFocusDown="@id/addHeartRateEditText"
+        tools:text="80"
+        app:layout_constraintBaseline_toBaselineOf="@id/addBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addBloodPressureSeperatorTextView" />
+
+    <TextView
+        android:id="@+id/addHeartRateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/addHeartRateEditText"
+        android:text="@string/add_heart_rate_label"
+        app:layout_constraintTop_toBottomOf="@id/addBloodPressureLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/addHeartRateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:focusable="true"
+        android:nextFocusDown="@id/addBloodSugarEditText"
+        tools:text="64"
+        app:layout_constraintBaseline_toBaselineOf="@id/addHeartRateLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addHeartRateLabelTextView" />
+
+    <TextView
+        android:id="@+id/addBloodSugarLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/addBloodSugarEditText"
+        android:text="@string/add_blood_sugar_label"
+        app:layout_constraintTop_toBottomOf="@id/addHeartRateLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/addBloodSugarEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:focusable="true"
+        android:importantForAutofill="no"
+        android:nextFocusDown="@id/addWeightEditText"
+        tools:text="120"
+        app:layout_constraintBaseline_toBaselineOf="@id/addBloodSugarLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addBloodSugarLabelTextView" />
+
+    <TextView
+        android:id="@+id/addWeightLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/addWeightEditText"
+        android:text="@string/add_weight_label"
+        app:layout_constraintTop_toBottomOf="@id/addBloodSugarLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/addWeightEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="no"
+        android:focusable="true"
+        android:nextFocusDown="@id/addSubmitButton"
+        tools:text="265.4"
+        app:layout_constraintBaseline_toBaselineOf="@id/addWeightLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/addWeightLabelTextView" />
+
+
+    <Button
+        android:id="@+id/addSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@id/addWeightLabelTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

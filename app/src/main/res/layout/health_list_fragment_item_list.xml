@@ -22,56 +22,59 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/list_margin"
-                android:layout_marginBottom="@dimen/list_margin"
-                android:layout_marginStart="@dimen/list_end_margin"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:text="@string/blood_pressure_label" />
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/list_blood_sugar_label_padding"
-                android:paddingEnd="@dimen/list_padding"
-                android:layout_marginTop="@dimen/list_margin"
-                android:layout_marginBottom="@dimen/list_margin"
-                android:layout_marginStart="@dimen/list_end_margin"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:text="@string/blood_sugar_label" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_marginTop="@dimen/list_margin"
+                    android:layout_marginBottom="@dimen/list_margin"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/blood_pressure_label" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/list_heart_rate_label_padding"
-                android:paddingEnd="@dimen/list_padding"
-                android:layout_marginTop="@dimen/list_margin"
-                android:layout_marginBottom="@dimen/list_margin"
-                android:layout_marginStart="@dimen/list_end_margin"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:text="@string/heart_rate_label" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/list_margin"
+                    android:layout_marginBottom="@dimen/list_margin"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/heart_rate_label" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/list_weight_label_padding"
-                android:paddingEnd="@dimen/list_padding"
-                android:layout_marginTop="@dimen/list_margin"
-                android:layout_marginBottom="@dimen/list_margin"
-                android:layout_marginStart="@dimen/list_end_margin"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:text="@string/weight_label" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/list_margin"
+                    android:layout_marginBottom="@dimen/list_margin"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/blood_sugar_label" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/list_margin"
-                android:layout_marginBottom="@dimen/list_margin"
-                android:layout_marginStart="@dimen/list_end_margin"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:text="@string/date_label" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/list_margin"
+                    android:layout_marginBottom="@dimen/list_margin"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/weight_label" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginTop="@dimen/list_margin"
+                    android:layout_marginBottom="@dimen/list_margin"
+                    android:layout_marginStart="@dimen/list_margin"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/date_label" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -79,7 +82,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/recipe_nested"
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -90,12 +93,19 @@
         android:name="mobi.thalic.healthrecord.HealthEntryFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_marginRight="@dimen/text_margin"
         app:layoutManager="LinearLayoutManager"
         tools:context=".HealthListFragment"
         tools:listitem="@layout/health_list_fragment_item" />
 
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/fab_content_text"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

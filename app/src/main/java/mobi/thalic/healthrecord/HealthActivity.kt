@@ -3,15 +3,13 @@ package mobi.thalic.healthrecord
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.google.android.material.snackbar.Snackbar
 import mobi.thalic.healthrecord.data.HealthEntity
 import mobi.thalic.healthrecord.databinding.ActivityHealthBinding
-import mobi.thalic.healthrecord.viewmodel.HealthViewModel
 
 class HealthActivity : AppCompatActivity(), HealthListFragment.OnListFragmentInteractionListener {
+
     private lateinit var binding: ActivityHealthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +20,7 @@ class HealthActivity : AppCompatActivity(), HealthListFragment.OnListFragmentInt
         //val model: HealthViewModel by viewModels()
 
 
-        binding.fab.setOnClickListener { view ->
-            findNavController(R.id.nav_host_fragment)
-                .navigate(R.id.action_HealthListFragment_to_HealthDetailFragment)
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

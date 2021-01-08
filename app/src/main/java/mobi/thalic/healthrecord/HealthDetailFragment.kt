@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import mobi.thalic.healthrecord.databinding.HealthDetailFragmentBinding
+import java.time.format.DateTimeFormatter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -30,9 +32,32 @@ class HealthDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_HealthDetailFragment_to_HealthListFragment)
+        val formatter = DateTimeFormatter.ofPattern("ddMMMyyyy HH:mm")
+        val date = formatter.format(args.healthRecord?.dateEntry)
+        binding.detailDateTextView.text = date
+        binding.detailSystolicTextView.text = args.healthRecord?.systolic.toString()
+        binding.detailDiastolicTextView.text = args.healthRecord?.diastolic.toString()
+        binding.detailBloodSugarTextView.text = args.healthRecord?.bloodSugar.toString()
+        binding.detailHeartRateTextView.text = args.healthRecord?.heartRate.toString()
+        binding.detailWeightTextView.text = args.healthRecord?.weight.toString()
+        binding.fab.setOnClickListener {
+            binding.fab.visibility = View.INVISIBLE
+            binding.detailBloodPressureEditImageButton.visibility = View.VISIBLE
+            binding.detailHeartRateEditImageButton.visibility = View.VISIBLE
+            binding.detailBloodSugarEditImageButton.visibility = View.VISIBLE
+            binding.detailWeightEditImageButton.visibility = View.VISIBLE
+            binding.detailBloodPressureEditImageButton.setOnClickListener {
+                Snackbar.make(view, "Edit blood pressure clicked", Snackbar.LENGTH_LONG).show()
+            }
+            binding.detailHeartRateEditImageButton.setOnClickListener {
+                Snackbar.make(view, "Edit heart rate clicked", Snackbar.LENGTH_LONG).show()
+            }
+            binding.detailBloodSugarEditImageButton.setOnClickListener {
+                Snackbar.make(view, "Edit blood sugar clicked", Snackbar.LENGTH_LONG).show()
+            }
+            binding.detailWeightEditImageButton.setOnClickListener {
+                Snackbar.make(view, "Edit weight clicked", Snackbar.LENGTH_LONG).show()
+            }
         }
     }
 

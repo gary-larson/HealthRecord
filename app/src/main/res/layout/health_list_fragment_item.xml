@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/list_end_padding"
+    android:paddingStart="@dimen/list_end_padding"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
+<!--    <TextView-->
+<!--        android:id="@+id/systolic"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_marginTop="@dimen/list_margin"-->
+<!--        android:layout_marginBottom="@dimen/list_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem"-->
+<!--        tools:text="120" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/list_margin"-->
+<!--        android:layout_marginBottom="@dimen/list_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem"-->
+<!--        android:text="@string/blood_pressure_seperator" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/diastolic"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/list_margin"-->
+<!--        android:layout_marginBottom="@dimen/list_margin"-->
+<!--        android:textAppearance="?attr/textAppearanceListItem"-->
+<!--        tools:text="100"/>-->
     <TextView
-        android:id="@+id/diastolic"
-        android:layout_width="wrap_content"
+        android:id="@+id/blood_pressure"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:layout_marginTop="@dimen/list_margin"
         android:layout_marginBottom="@dimen/list_margin"
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="120" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/list_margin"
-        android:layout_marginBottom="@dimen/list_margin"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:text="@string/blood_pressure_seperator" />
-
-    <TextView
-        android:id="@+id/systolic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/list_margin"
-        android:layout_marginBottom="@dimen/list_margin"
-        android:layout_marginEnd="@dimen/list_margin"
-        android:textAppearance="?attr/textAppearanceListItem"
-        tools:text="100"/>
-
-    <TextView
         android:id="@+id/blood_sugar"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/list_margin"
         android:layout_marginBottom="@dimen/list_margin"
-        android:layout_marginEnd="@dimen/list_margin"
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="120" />
 
     <TextView
         android:id="@+id/heart_rate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/list_margin"
         android:layout_marginBottom="@dimen/list_margin"
-        android:layout_marginEnd="@dimen/list_margin"
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="100"/>
 
     <TextView
         android:id="@+id/weight"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_weight="1"
         android:layout_marginTop="@dimen/list_margin"
         android:layout_marginBottom="@dimen/list_margin"
-        android:layout_marginEnd="@dimen/list_margin"
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="185" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="3"
         android:layout_marginTop="@dimen/list_margin"
         android:layout_marginBottom="@dimen/list_margin"
-        android:layout_marginStart="@dimen/list_end_margin"
+        android:layout_marginStart="@dimen/list_margin"
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="2020-12-12 12:00"/>
 </LinearLayout>

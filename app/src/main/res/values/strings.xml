@@ -21,4 +21,5 @@
     <string name="add_blood_sugar_label">Blood Sugar:</string>
     <string name="add_weight_label">Weight:</string>
     <string name="add_heart_rate_label">Heart Rate:</string>
+    <string name="submit">Submit</string>
 </resources>

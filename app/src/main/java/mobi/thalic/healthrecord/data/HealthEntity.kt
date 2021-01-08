@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import java.time.LocalDateTime
 
 @Parcelize
@@ -18,11 +18,10 @@ data class HealthEntity (
     var bloodSugar : Int,
     @ColumnInfo(name = "weight")
     var weight : Float,
-    @ColumnInfo(name = "diastolic")
-    var diastolic: Int,
     @ColumnInfo(name = "systolic")
     var systolic : Int,
+    @ColumnInfo(name = "diastolic")
+    var diastolic: Int,
     @ColumnInfo(name = "heart_rate")
     var heartRate : Int
-) : Parcelable {
-}
+) : Parcelable

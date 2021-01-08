@@ -1,28 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobi.thalic.healthrecord.HealthDetailFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HealthAddDetailFragment">
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/detailDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/detail_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/text_margin"
+        tools:text="Date: 11Dec2020 12:30 "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/button_second"
+    <TextView
+        android:id="@+id/detailBloodPressureLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/health_detail_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:labelFor="@id/detailSystolicTextView"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/add_blood_pressure_label"
+        app:layout_constraintTop_toBottomOf="@id/detailDateTextView"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/detailSystolicTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:nextFocusForward="@id/detailDiastolicTextView"
+        tools:text="120"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailBloodPressureLabelTextView" />
+
+    <TextView
+        android:id="@+id/detailBloodPressureSeperatorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/detailDiastolicTextView"
+        android:text="@string/blood_pressure_seperator"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailSystolicTextView"/>
+
+    <TextView
+        android:id="@+id/detailDiastolicTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:nextFocusDown="@id/detailHeartRateTextView"
+        tools:text="80"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailBloodPressureLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailBloodPressureSeperatorTextView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/detailBloodPressureEditImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edit_icon_margin"
+        android:background="@drawable/button_selector"
+        android:padding="@dimen/edit_icon_padding"
+        android:src="@drawable/ic_edit_24px"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/detailDiastolicTextView"
+        app:layout_constraintTop_toTopOf="@id/detailBloodPressureLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@id/detailBloodPressureLabelTextView"/>
+
+    <TextView
+        android:id="@+id/detailHeartRateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/detailHeartRateTextView"
+        android:text="@string/add_heart_rate_label"
+        app:layout_constraintTop_toBottomOf="@id/detailBloodPressureLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/detailHeartRateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="64"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailHeartRateLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailHeartRateLabelTextView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/detailHeartRateEditImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edit_icon_margin"
+        android:background="@drawable/button_selector"
+        android:padding="@dimen/edit_icon_padding"
+        android:src="@drawable/ic_edit_24px"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/detailHeartRateTextView"
+        app:layout_constraintTop_toTopOf="@id/detailHeartRateLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@id/detailHeartRateLabelTextView" />
+
+    <TextView
+        android:id="@+id/detailBloodSugarLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/detailBloodSugarTextView"
+        android:text="@string/add_blood_sugar_label"
+        app:layout_constraintTop_toBottomOf="@id/detailHeartRateLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/detailBloodSugarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="120"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailBloodSugarLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailBloodSugarLabelTextView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/detailBloodSugarEditImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edit_icon_margin"
+        android:background="@drawable/button_selector"
+        android:padding="@dimen/edit_icon_padding"
+        android:src="@drawable/ic_edit_24px"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/detailBloodSugarTextView"
+        app:layout_constraintTop_toTopOf="@id/detailBloodSugarLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@id/detailBloodSugarLabelTextView"/>
+
+    <TextView
+        android:id="@+id/detailWeightLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:labelFor="@id/detailWeightTextView"
+        android:text="@string/add_weight_label"
+        app:layout_constraintTop_toBottomOf="@id/detailBloodSugarLabelTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/detailWeightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="265.4"
+        app:layout_constraintBaseline_toBaselineOf="@id/detailWeightLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/detailWeightLabelTextView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/detailWeightEditImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/edit_icon_margin"
+        android:background="@drawable/button_selector"
+        android:padding="@dimen/edit_icon_padding"
+        android:src="@drawable/ic_edit_24px"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/detailWeightTextView"
+        app:layout_constraintTop_toTopOf="@id/detailWeightLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@id/detailWeightLabelTextView"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/fab_content_text"
+        app:srcCompat="@android:drawable/ic_menu_edit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
