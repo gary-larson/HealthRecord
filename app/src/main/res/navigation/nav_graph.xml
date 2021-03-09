@@ -17,8 +17,8 @@
         <action
             android:id="@+id/action_HealthListFragment_to_healthAddDetailFragment"
             app:destination="@id/healthAddDetailFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit" />
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/HealthDetailFragment"
@@ -43,7 +43,7 @@
         <action
             android:id="@+id/action_healthAddDetailFragment_to_HealthListFragment"
             app:destination="@id/HealthListFragment"
-            app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit" />
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>
